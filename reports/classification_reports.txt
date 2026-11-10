@@ -1,0 +1,24 @@
+## TF-IDF + Logistic Regression
+
+              precision    recall  f1-score   support
+
+    negative     0.6285    0.6767    0.6517       300
+     neutral     0.6541    0.6367    0.6453       300
+    positive     0.6632    0.6300    0.6462       300
+
+    accuracy                         0.6478       900
+   macro avg     0.6486    0.6478    0.6477       900
+weighted avg     0.6486    0.6478    0.6477       900
+
+
+## XLM-R pretrained
+
+              precision    recall  f1-score   support
+
+    negative     0.6173    0.7367    0.6717       300
+     neutral     0.6335    0.4033    0.4929       300
+    positive     0.6325    0.7400    0.6820       300
+
+    accuracy                         0.6267       900
+   macro avg     0.6278    0.6267    0.6155       900
+weighted avg     0.6278    0.6267    0.6155       900

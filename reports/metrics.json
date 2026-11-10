@@ -1,0 +1,147 @@
+{
+  "dataset": "clapAI/MultiLingualSentiment balanced Arabic-English subset",
+  "labels": [
+    "negative",
+    "neutral",
+    "positive"
+  ],
+  "train_rows": 3600,
+  "validation_rows": 600,
+  "test_rows": 900,
+  "counts": {
+    "test|ar|negative": 150,
+    "test|ar|neutral": 150,
+    "test|ar|positive": 150,
+    "test|en|negative": 150,
+    "test|en|neutral": 150,
+    "test|en|positive": 150,
+    "train|ar|negative": 600,
+    "train|ar|neutral": 600,
+    "train|ar|positive": 600,
+    "train|en|negative": 600,
+    "train|en|neutral": 600,
+    "train|en|positive": 600,
+    "validation|ar|negative": 100,
+    "validation|ar|neutral": 100,
+    "validation|ar|positive": 100,
+    "validation|en|negative": 100,
+    "validation|en|neutral": 100,
+    "validation|en|positive": 100
+  },
+  "selected_logistic_regression_C": 0.5,
+  "baseline_validation_grid": [
+    {
+      "C": 0.5,
+      "validation_macro_f1": 0.6427572386891117
+    },
+    {
+      "C": 1.0,
+      "validation_macro_f1": 0.6327059840906711
+    },
+    {
+      "C": 2.0,
+      "validation_macro_f1": 0.6408641562102836
+    }
+  ],
+  "comparison": [
+    {
+      "model": "TF-IDF + Logistic Regression",
+      "split": "validation",
+      "accuracy": 0.6416666666666667,
+      "macro_precision": 0.6523017239024124,
+      "macro_recall": 0.6416666666666666,
+      "macro_f1": 0.6427572386891117,
+      "weighted_f1": 0.6427572386891117,
+      "n": 600
+    },
+    {
+      "model": "TF-IDF + Logistic Regression",
+      "split": "test",
+      "accuracy": 0.6477777777777778,
+      "macro_precision": 0.6485834853047203,
+      "macro_recall": 0.6477777777777778,
+      "macro_f1": 0.6477031698941812,
+      "weighted_f1": 0.6477031698941811,
+      "n": 900
+    },
+    {
+      "model": "CardiffNLP XLM-R pretrained (no fine-tuning on this sample)",
+      "split": "validation",
+      "accuracy": 0.6233333333333333,
+      "macro_precision": 0.6272063707090377,
+      "macro_recall": 0.6233333333333333,
+      "macro_f1": 0.6131357344160906,
+      "weighted_f1": 0.6131357344160906,
+      "n": 600
+    },
+    {
+      "model": "CardiffNLP XLM-R pretrained (no fine-tuning on this sample)",
+      "split": "test",
+      "accuracy": 0.6266666666666667,
+      "macro_precision": 0.627768307211988,
+      "macro_recall": 0.6266666666666667,
+      "macro_f1": 0.6155439543312121,
+      "weighted_f1": 0.6155439543312121,
+      "n": 900
+    }
+  ],
+  "per_language_metrics": [
+    {
+      "model": "TF-IDF + Logistic Regression",
+      "language": "ar",
+      "accuracy": 0.6466666666666666,
+      "macro_precision": 0.6543844577180391,
+      "macro_recall": 0.6466666666666666,
+      "macro_f1": 0.6464041052370657,
+      "weighted_f1": 0.6464041052370657,
+      "n": 450
+    },
+    {
+      "model": "CardiffNLP XLM-R pretrained",
+      "language": "ar",
+      "accuracy": 0.6177777777777778,
+      "macro_precision": 0.615729133183328,
+      "macro_recall": 0.6177777777777778,
+      "macro_f1": 0.6077792077792078,
+      "weighted_f1": 0.6077792077792078,
+      "n": 450
+    },
+    {
+      "model": "TF-IDF + Logistic Regression",
+      "language": "en",
+      "accuracy": 0.6488888888888888,
+      "macro_precision": 0.6572769369064559,
+      "macro_recall": 0.648888888888889,
+      "macro_f1": 0.6476358113716186,
+      "weighted_f1": 0.6476358113716186,
+      "n": 450
+    },
+    {
+      "model": "CardiffNLP XLM-R pretrained",
+      "language": "en",
+      "accuracy": 0.6355555555555555,
+      "macro_precision": 0.6400152335487377,
+      "macro_recall": 0.6355555555555555,
+      "macro_f1": 0.6218238234178739,
+      "weighted_f1": 0.6218238234178739,
+      "n": 450
+    }
+  ],
+  "transformer": {
+    "model_id": "cardiffnlp/twitter-xlm-roberta-base-sentiment",
+    "id2label": {
+      "0": "negative",
+      "1": "neutral",
+      "2": "positive"
+    },
+    "evaluated_without_fine_tuning": true,
+    "max_length": 160,
+    "batch_size": 12,
+    "runtime_device": "cpu"
+  },
+  "limitations": [
+    "The dataset aggregates many sources and domains; all 17 test domains and all 27 test sources also occur in train, so this test does not measure unseen-domain/source generalization.",
+    "The pretrained model may have seen overlapping public material during pretraining/fine-tuning; no claim of contamination-free zero-shot evaluation is made.",
+    "This is a small balanced educational sample, not a production customer-feedback benchmark."
+  ]
+}

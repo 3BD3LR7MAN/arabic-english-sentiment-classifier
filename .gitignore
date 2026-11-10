@@ -1,0 +1,28 @@
+# Python and environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.cache/
+.ipynb_checkpoints/
+
+# Source text and generated sample; keep only aggregate sample_counts.csv
+/data/raw/*.parquet
+/data/raw/**/*.parquet
+/data/processed/bilingual_sentiment_sample.csv
+
+# Text-bearing evaluation outputs and fitted models
+/reports/test_predictions.csv
+/reports/error_examples.csv
+/models/*.joblib
+/models/*.pkl
+/models/*.pt
+/models/*.bin
+/models/*.safetensors
+
+# Local credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
