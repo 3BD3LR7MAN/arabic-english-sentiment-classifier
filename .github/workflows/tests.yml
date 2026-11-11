@@ -1,0 +1,25 @@
+name: project-checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Install core and development dependencies
+        run: python -m pip install -r requirements-dev.txt
+      - name: Compile source
+        run: python -m py_compile src/*.py
+      - name: Validate notebook JSON
+        run: python -m json.tool notebooks/Arabic_English_Sentiment_Classifier.ipynb > /dev/null
+      - name: Run tests
+        run: python -m pytest -q

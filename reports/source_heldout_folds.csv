@@ -1,0 +1,4 @@
+fold,n_train,n_heldout,train_groups,heldout_groups,group_overlap,selected_C,heldout_metrics
+1,2155,1445,17,12,0,0.5,"{'accuracy': 0.4685121107266436, 'macro_precision': 0.4685122588700074, 'macro_recall': 0.46585000969533336, 'macro_f1': 0.46287701856545455, 'weighted_f1': 0.46887337974902255, 'n': 1445}"
+2,2407,1193,21,8,0,0.5,"{'accuracy': 0.24392288348700755, 'macro_precision': 0.2034249693288869, 'macro_recall': 0.3075343785650418, 'macro_f1': 0.24264173918916176, 'weighted_f1': 0.1937256663437797, 'n': 1193}"
+3,2638,962,20,9,0,0.5,"{'accuracy': 0.4573804573804574, 'macro_precision': 0.40587618933483594, 'macro_recall': 0.40194545195932013, 'macro_f1': 0.40057624269938225, 'weighted_f1': 0.4521092565612377, 'n': 962}"

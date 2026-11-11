@@ -1,0 +1,116 @@
+{
+  "evaluation": "nested stratified source-held-out cross-validation",
+  "group_column": "source",
+  "outer_folds": 3,
+  "inner_folds": 3,
+  "seed": 42,
+  "C_grid": [
+    0.5,
+    1.0,
+    2.0
+  ],
+  "scope_note": "Uses only rows whose original split is train. Each outer held-out source group is absent from that fold training; this is not a replacement for an external benchmark.",
+  "audit": {
+    "input_train_rows": 3600,
+    "rows_removed_for_conflicting_normalized_labels": 0,
+    "rows_removed_as_normalized_duplicates": 0,
+    "rows_used": 3600,
+    "group_count": 29
+  },
+  "outer_fold_results": [
+    {
+      "fold": 1,
+      "n_train": 2155,
+      "n_heldout": 1445,
+      "train_groups": 17,
+      "heldout_groups": 12,
+      "group_overlap": 0,
+      "selected_C": 0.5,
+      "inner_macro_f1_by_C": {
+        "0.5": 0.31847253510169465,
+        "1.0": 0.3173890909169826,
+        "2.0": 0.3139812351554725
+      },
+      "heldout_metrics": {
+        "accuracy": 0.4685121107266436,
+        "macro_precision": 0.4685122588700074,
+        "macro_recall": 0.46585000969533336,
+        "macro_f1": 0.46287701856545455,
+        "weighted_f1": 0.46887337974902255,
+        "n": 1445
+      }
+    },
+    {
+      "fold": 2,
+      "n_train": 2407,
+      "n_heldout": 1193,
+      "train_groups": 21,
+      "heldout_groups": 8,
+      "group_overlap": 0,
+      "selected_C": 0.5,
+      "inner_macro_f1_by_C": {
+        "0.5": 0.4636757376889551,
+        "1.0": 0.4585766388846772,
+        "2.0": 0.4531034194798491
+      },
+      "heldout_metrics": {
+        "accuracy": 0.24392288348700755,
+        "macro_precision": 0.2034249693288869,
+        "macro_recall": 0.3075343785650418,
+        "macro_f1": 0.24264173918916176,
+        "weighted_f1": 0.1937256663437797,
+        "n": 1193
+      }
+    },
+    {
+      "fold": 3,
+      "n_train": 2638,
+      "n_heldout": 962,
+      "train_groups": 20,
+      "heldout_groups": 9,
+      "group_overlap": 0,
+      "selected_C": 0.5,
+      "inner_macro_f1_by_C": {
+        "0.5": 0.39312681642510955,
+        "1.0": 0.3772906007210605,
+        "2.0": 0.37224011269632595
+      },
+      "heldout_metrics": {
+        "accuracy": 0.4573804573804574,
+        "macro_precision": 0.40587618933483594,
+        "macro_recall": 0.40194545195932013,
+        "macro_f1": 0.40057624269938225,
+        "weighted_f1": 0.4521092565612377,
+        "n": 962
+      }
+    }
+  ],
+  "aggregate_oof_metrics": {
+    "accuracy": 0.39111111111111113,
+    "macro_precision": 0.3713416423048601,
+    "macro_recall": 0.39111111111111113,
+    "macro_f1": 0.3778877128942942,
+    "weighted_f1": 0.3778877128942942,
+    "n": 3600
+  },
+  "per_language_oof_metrics": [
+    {
+      "language": "ar",
+      "accuracy": 0.3788888888888889,
+      "macro_precision": 0.3867594213724895,
+      "macro_recall": 0.3788888888888889,
+      "macro_f1": 0.3822730233843858,
+      "weighted_f1": 0.38227302338438574,
+      "n": 1800
+    },
+    {
+      "language": "en",
+      "accuracy": 0.4033333333333333,
+      "macro_precision": 0.3360155955404723,
+      "macro_recall": 0.4033333333333333,
+      "macro_f1": 0.3581588851753512,
+      "weighted_f1": 0.3581588851753512,
+      "n": 1800
+    }
+  ]
+}

@@ -5,6 +5,7 @@ __pycache__/
 venv/
 .cache/
 .ipynb_checkpoints/
+.pytest_cache/
 
 # Source text and generated sample; keep only aggregate sample_counts.csv
 /data/raw/*.parquet

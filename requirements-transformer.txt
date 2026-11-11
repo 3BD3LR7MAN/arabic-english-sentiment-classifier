@@ -1,0 +1,6 @@
+# Install this file only when running the optional pretrained XLM-R comparison.
+-r requirements.txt
+torch>=2.2,<3
+transformers>=4.45,<6
+sentencepiece>=0.2,<1
+protobuf>=7.36.1,<8

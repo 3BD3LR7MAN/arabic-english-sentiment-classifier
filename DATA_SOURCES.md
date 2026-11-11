@@ -9,6 +9,7 @@
 - **Recreation:** `python src/prepare_dataset.py` downloads the pinned Parquet conversion (roughly 0.9 GB total), verifies SHA-256 hashes, and writes a local balanced sample. Running that script does not grant permission to publish its outputs.
 - **Fields used by the pipeline:** `text`, `label`, `source`, `domain`, and `language`.
 - **Sample design from the documented run:** 3,600 train, 600 validation, and 900 test rows, balanced by language and label. Every test domain (17) and source (27) also occurs in train; this is not a source- or domain-held-out evaluation.
+- **Additional source-heldout diagnostic:** nested 3×3 grouped cross-validation uses only the 3,600 original training rows, with all 29 source groups held out from the corresponding outer-fold model. The classical baseline reached aggregate out-of-fold accuracy 0.391 and macro-F1 0.378. This is an internal diagnostic, not an independent external benchmark; details and aggregate-only outputs are in [`reports/Source_Heldout_Evaluation.md`](reports/Source_Heldout_Evaluation.md).
 - **Pinned Parquet conversion revision:** `a51e836ffc377d55c2278b0556c939ad9a3ca09e`.
 
 | Parquet file | SHA-256 |

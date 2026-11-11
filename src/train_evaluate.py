@@ -8,14 +8,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import seaborn as sns
-import torch
-from scipy.special import softmax
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.pipeline import FeatureUnion
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import (accuracy_score, classification_report, confusion_matrix,
                              f1_score, precision_recall_fscore_support)
-from transformers import AutoConfig, AutoTokenizer, AutoModelForSequenceClassification
 
 LABELS = ['negative', 'neutral', 'positive']
 MODEL_ID = 'cardiffnlp/twitter-xlm-roberta-base-sentiment'
@@ -47,6 +44,12 @@ def metric_block(y_true, y_pred):
 
 
 def predict_transformer(texts, batch_size=12, max_length=160):
+    try:
+        import torch
+        from scipy.special import softmax
+        from transformers import AutoConfig, AutoTokenizer, AutoModelForSequenceClassification
+    except ImportError as exc:
+        raise RuntimeError('Transformer inference requires optional packages. Install with: python -m pip install -r requirements-transformer.txt') from exc
     tokenizer = AutoTokenizer.from_pretrained(MODEL_ID)
     config = AutoConfig.from_pretrained(MODEL_ID)
     model = AutoModelForSequenceClassification.from_pretrained(MODEL_ID)
