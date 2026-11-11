@@ -4,7 +4,8 @@ A three-class sentiment project for Arabic and English text. It compares a word/
 
 ## Demo video
 
-[Watch the narrated project demo](media/arabic-english-sentiment-demo.mp4)
+[Watch the narrated project demo on Google Drive](https://drive.google.com/file/d/1rHVfV5DDwhXseqITg2mwrZscDlD9vFcn/view?usp=sharing)  
+[Open the GitHub video copy](media/arabic-english-sentiment-demo.mp4)
 
 The video presents the bilingual task, the TF-IDF and XLM-R comparison, official test results, the source-heldout diagnostic, privacy protections, and responsible-use limitations. The video is a portfolio demonstration; it does not contain source text, row-level predictions, credentials, or private data.
 
