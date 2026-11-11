@@ -2,6 +2,12 @@
 
 A three-class sentiment project for Arabic and English text. It compares a word/character TF-IDF + Logistic Regression baseline with pretrained multilingual XLM-R inference.
 
+## Demo video
+
+[Watch the narrated project demo](media/arabic-english-sentiment-demo.mp4)
+
+The video presents the bilingual task, the TF-IDF and XLM-R comparison, official test results, the source-heldout diagnostic, privacy protections, and responsible-use limitations. The video is a portfolio demonstration; it does not contain source text, row-level predictions, credentials, or private data.
+
 ## Privacy-safe repository contents
 
 This repository intentionally excludes the source-text sample, row-level predictions, error examples, and serialized fitted model. The upstream corpus aggregates third-party text, and some sampled records contain long numeric identifiers. Only code and aggregate evaluation artifacts are published. Do not commit locally generated text data, row-level outputs, or fitted models unless source permissions and privacy have been reviewed.
